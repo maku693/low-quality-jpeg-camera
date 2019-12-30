@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+img {
+  border: none;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.screen--preview {
+  background: #000;
+  opacity: 0;
+  transition: opacity 150ms;
+  pointer-events: none;
+}
+
+.screen--preview-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.quality {
+  display: block;
+  position: absolute;
+  padding: 0.25em 0.5em;
+  color: #f80;
+  font-family: Consolas, Menlo, monospace;
+}
+
+.preview {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.loading {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.button--bottom-center {
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: calc(50% - 30px);
+  bottom: 30px;
+}
+
+.button--release {
+  border-radius: 50%;
+  background: #fff;
+}
+
+.button--release::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.button--close-preview {
+  background: transparent;
+}
+
+.button--close-preview::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 60px;
+  left: 0;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.button--close-preview::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 60px;
+  left: 0;
+  background: #fff;
+  transform: rotate(-45deg);
+}
